@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
-import dj_database_url
+# import dj_database_url
 
 import _locale
 _locale._getdefaultlocale = (lambda *args: ['en_US', 'utf8'])
@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@^q#7-$lm28^!jyoav1b-m-&by!8^+9n#tzy0x@guvew^^koen'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['quiet-springs-75611.herokuapp.com', 'carzone.co', 'www.carzone.co']
+ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL ='dashboard'
 
@@ -96,17 +96,17 @@ WSGI_APPLICATION = 'carzone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'carzone_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Niti$h@97p',
-#         'HOST': 'localhost',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carzone_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Niti$h@97p',
+        'HOST': 'localhost',
+    }
+}
 
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:Niti$h@97p@localhost/carzone_db')}
+# DATABASES = {'default': dj_database_url.config(default='postgres://postgres:Niti$h@97p@localhost/carzone_db')}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
